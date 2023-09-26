@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Animacija</title>
+        <style>
+            body{
+                padding: 200px;
+                margin: 0px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #050210;
+            }
+            /*Centar koji pulsira*/
+            .center {
+                position: absolute;
+                height: 300px;
+                width: 300px;
+                border-radius: 50%;
+                background-color: black;
+                animation: pulse 1.2s infinite;
+            }
+            @keyframes pulse {
+                0% {
+                    scale: 0;
+                }
+                100% {
+                    scale: 1;
+                }
+            }
+            /*Krug koji se ne vidi*/
+            .circle1 {
+                position: relative;
+                height: 300px;
+                width: 300px;
+                border-radius: 50%;
+                background-color: #36343f;
+                animation: pulse 1.2s infinite;
+            }
+            @keyframes pulse {
+                0% {
+                    scale: 0;
+                }
+                50% {
+                    scale: 0.8;
+                }
+                100% {
+                    scale: 1;
+                }
+            }
+            .circle2 {
+                position: absolute;
+                height: 350px;
+                width: 350px;
+                border-radius: 50%;
+                background: repeating-linear-gradient(#fb5dad, #55fb9f, #b97aff);
+                filter: opacity(70%);
+            }
+            
+            .inner-circle {
+                position: absolute;
+                height: 200px;
+                width: 200px;
+                background-color: black;
+                border-radius: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            /*Kada stavim glow (ili after), kao sto se vidi, glow mi odlazi skroz dole desno*/
+            .boxshadow{
+                content: '';
+                position: absolute;
+                background: repeating-linear-gradient(#fb5dad, #55fb9f, #b97aff);
+                width: 350px;
+                height: 350px;
+                border-radius: 50%;
+                filter: blur(20px);
+                animation: animateBS 1s linear infinite;
+            }
+            @keyframes animateBS {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+    <div class="center"></div>
+    <div class="boxshadow"></div>
+    /*Crni krug*/
+    <div class="inner-circle"></div>
+    </body>
+    </html>
